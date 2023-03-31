@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.datasets import fetch_openml
+import seaborn as sns
 
 # Load Boston Housing Dataset
 boston = fetch_openml(name='boston')
@@ -28,4 +29,12 @@ plt.subplots_adjust(left=0.05, right=0.95, bottom=0.05, top=0.95, hspace=0.4, ws
 
 # Show the plot
 plt.savefig('boston_housing_plot.png')
+plt.show()
+
+corr_matrix = df.corr()
+fig, ax = plt.subplots(figsize=(10, 10))
+sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1, ax=ax)
+ax.set_title('Correlation Matrix of Boston Housing Dataset')
+plt.tight_layout()
+plt.savefig('boston_housing_plot2.png')
 plt.show()
