@@ -1,0 +1,19 @@
+# Predict median value of owner-occupied homes for a given set of input parameters
+POST http://localhost:8000/predict
+Content-Type: application/json
+
+{
+    "CRIM": 0.03,
+    "ZN": 0.0,
+    "INDUS": 5.19,
+    "CHAS": 0,
+    "NOX": 0.5,
+    "RM": 6.0,
+    "AGE": 48.5,
+    "DIS": 5.0,
+    "RAD": 5,
+    "TAX": 224.0,
+    "PTRATIO": 20.2,
+    "B": 395.43,
+    "LSTAT": 8.13
+}
